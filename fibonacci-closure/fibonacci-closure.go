@@ -7,15 +7,12 @@ import "fmt"
 func fibonacci() func() uint64 {
 	var prev uint64 = 0
 	var prevPrev uint64 = 0
-	var tmp uint64 = 0
 	return func() uint64 {
 		if prev == 0 {
 			prev = 1
 			return prev
 		}
-		tmp = prev
-		prev = prev + prevPrev
-		prevPrev = tmp
+		prev, prevPrev = prev+prevPrev, prev
 		return prev
 	}
 }
