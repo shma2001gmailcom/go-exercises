@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/tour/wc"
 )
-
+//WordCount counts the words
 func WordCount(s string) map[string]int {
 	var words = make(map[string]int)
 	for _, v := range strings.Fields(s) {
